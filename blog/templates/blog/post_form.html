@@ -1,0 +1,30 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block body_block %}
+    
+    
+    <div class="col-lg-8 mr-auto ml-auto">
+        <h1>
+            {% if not form.instance.pk %}
+                Create
+            {% else %}
+                Update
+            {% endif %}
+        </h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{form|crispy}}
+
+            {% if form.instance.pk %}
+                <input class="btn btn-primary " type="submit" value="Save">
+            {% else %}
+                <input class="btn btn-primary " type="submit" value="Draft">
+                <input class="btn btn-primary" formaction="{% url 'publish_now' %}"  type="submit" value="Publish Now">
+            {% endif %}
+        </form>
+        
+        
+    </div>
+{% endblock body_block %}
+    

@@ -1,0 +1,30 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block body_block %}
+    <div class="login_page">
+        
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-8"></div>
+                    <div class="col-4">
+                        
+                            <div class="col-11">
+                                {{ form.username|as_crispy_field }}
+                            </div>
+                            <div class="col-11">
+                                {{ form.password|as_crispy_field }}
+                            </div>
+                            <div class="col-2">
+                                <input class="btn btn-success" type="submit" value="Login">
+                            </div>
+                        
+                    </div>
+                </div>
+            </form>
+       
+
+    </div>
+{% endblock body_block %}
+    

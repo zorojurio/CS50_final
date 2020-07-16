@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block body_block %}
+<div class="col-lg-8 mr-auto ml-auto">
+    
+    <form method="POST">
+        {% csrf_token %}
+        {{form|crispy}}  
+        <input class="btn btn-primary " type="submit" value="Save">
+    </form>
+
+
+</div>
+{% endblock body_block %}

@@ -1,0 +1,55 @@
+{% extends 'blog/base.html' %}
+
+
+{% block body_block %}
+   <div class="row">
+    <div class="col-lg-7 mr-auto ml-auto">
+      <div class="card" style="width: 45rem;">
+        <h2 class="card-title text-center m-4 p-2 ">{{post.title}}</h2>
+        <img class="card-img-top" src="{{post.get_image}}" alt="Card image cap">
+        <div class="card-body">
+          
+          <p class="card-text">{{post.text}}</p>
+          <div class="text-right">
+            {% if post.published_date %}
+              {{published_date}}
+            {% else %}
+              <a class='btn btn-primary' href="{% url 'approve_post' pk=post.pk %}">Publish</a>
+            {% endif %}
+          </div>
+          {% if user.is_authenticated %}
+          <div class="text-right">
+            <a class='btn btn-warning' href="{% url 'post_update' pk=post.pk %}">Update</a>
+            <a class='btn btn-danger' href="{% url 'post_delete' pk=post.pk %}">Delete</a>
+          </div>
+          
+          {% endif %}
+        </div>
+      </div>
+     
+
+     
+        
+       
+
+             
+  </div>
+  <div class="col-lg-3">
+    <h2 class="text-center">Recent Posts</h2>
+    {% for post in most_recent %}
+    <div class="card mb-4" style="width: 18rem;">
+      <a href="{{post.get_absolute_url}}">
+      <img class="card-img-top" src="{{post.get_image}}" alt="{{post.title}}">
+      </a>
+      <div class="card-body">
+        <a href="{{post.get_absolute_url}}">
+          <p class="card-text">{{post.text|truncatechars:70}}</p>
+        </a>
+      </div>
+    </div>
+    {% endfor %}
+      
+  </div> 
+   </div>
+{% endblock body_block %}
+    
