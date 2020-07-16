@@ -1,10 +1,36 @@
 {% extends 'blog/base.html' %}
 
+{% load static %}
+
+
+{% block custom_css %}
+    <link rel="stylesheet" href="{% static 'blog/css/about.css' %}">
+{% endblock custom_css %}
 
 {% block body_block %}
+    <div class="jumbotron jumbotron-fluid bg-green mt-0">
+        <div class="container">
+        <h1 class="display-4 text-center">This is ArtiPress</h1>
+        
+        </div>
+    </div>
     <div class="container">
-        <h1>About Us</h1>
-        <p>We are D Rocks</p>
+        
+        <div class="row">
+            <div class="col-8 mx-auto">
+                <h2 class="text-center about-heading">In the Begining</h2>
+                <p class="text-center">Artipress was started as a corporation in late 1960's</p>
+
+                <div class="card mx-auto" style="width: 30rem;">
+                    <img class="card-img-top" src="{% static 'images/01.jpg' %}" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">Chanuka Chathuranga</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock body_block %}
     

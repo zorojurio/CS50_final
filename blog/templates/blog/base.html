@@ -23,6 +23,11 @@
     <!-- Custom Css -->
     <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
     
+    {% block custom_css %}
+        
+    {% endblock custom_css %}
+        
+
     <!-- font -->
     <script src="https://kit.fontawesome.com/d660680543.js" crossorigin="anonymous"></script>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
@@ -31,7 +36,7 @@
 </head>
 <body>
     <!-- navbar start -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-lg-5">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="{% url 'post_list' %}">Blog</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

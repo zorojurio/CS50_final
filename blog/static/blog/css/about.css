@@ -1,0 +1,10 @@
+.bg-green{
+    background-color: #79A301;
+    color: aliceblue;
+}
+
+.about-heading{
+    color: #79A301;
+    margin-bottom: 40px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
